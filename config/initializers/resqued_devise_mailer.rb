@@ -25,7 +25,7 @@ class ResquedDeviseMailer < Devise::Mailer
   end
 
   protected
-  # monkey path :D
+  # monkey patch :D
   def hack_record(record)
     record.kind_of?(Hash) ? kmodel(record).find(record.first[1]['id']) : record
   end
