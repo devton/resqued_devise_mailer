@@ -3,6 +3,7 @@
 FIX two problems using this:
 
 1 - Devise expected to receive a 'record' but the Resque::Mailer sends a 'Hash'.
+
 2 - When Resque call the devise methods to send a e-mail that don't render the
 e-mails layouts.
 
