@@ -1,19 +1,20 @@
 = ResquedDeviseMailer
 
+Updated to work with Devise ~> 1.4.5 (setup_mail is deprecated)
+
+Slightly simplified monkey patch. 
+
 FIX two problems using this:
 
-1 - Devise expected to receive a 'record' but the Resque::Mailer sends a 'Hash'.
+1 - Devise expected to receive a 'record' but the Resque::Mailer sends a 'Hash' with the email address.
 
 2 - When Resque call the devise methods to send a e-mail that don't render the
 e-mails layouts.
 
 == How to use
 
-1 - Copy the 'resqued_devise_mailer.rb' into your config/initializers folder :) and be happy.
-
-2 - Edit the devise.rb in the same folder to
-  # Configure the class responsible to send e-mails.
-  config.mailer = "ResquedDeviseMailer"
+1 - Copy the 'resqued_devise_mailer.rb' into your config/initializers folder :) and be happy. 
+(I copied to bottom of my config/initializers/devise.rb, and it worked just fine ;) ).
 
 
 == Copyright
